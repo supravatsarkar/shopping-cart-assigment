@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div style={{ border: '2px solid black', position: "fixed" }}>
-            <h2>This is Header</h2>
+        <div id='header'>
+            <h2 className='p-3 bg-secondary text-white'>E-commerce</h2>
         </div>
     );
 };
