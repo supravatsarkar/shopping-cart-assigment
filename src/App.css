@@ -38,7 +38,7 @@
   margin: 10px;
   /* top: 60px; */
   right: 10px;
-  width: 350px;
+  width: 370px;
   height: 70vh;
   /* background-color: greenyellow; */
   z-index: 11;
@@ -64,5 +64,12 @@
 #cartCloseBtn:hover{
   transform: scale(1.2);
   /* transition-duration: 0.8s; */
+}
+.deleteFromCartIcon{
+  cursor: pointer;
+}
+.deleteFromCartIcon:hover{
+  
+  transform: scale(1.2);
 }
 

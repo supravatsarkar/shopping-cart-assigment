@@ -3,9 +3,9 @@ import Cart from "../Cart/Cart";
 import Products from "../Products/Products";
 
 
-const Shop = ({ cartDisplay, setCartDisplay }) => {
+const Shop = ({ cartDisplay, setCartDisplay, cart, setCart }) => {
 
-    const [cart, setCart] = useState([]);
+    // const [cart, setCart] = useState([]);
 
 
     return (
@@ -13,7 +13,7 @@ const Shop = ({ cartDisplay, setCartDisplay }) => {
             {/* <h1>This is Shop</h1> */}
 
             <Products setCart={setCart} cart={cart} setCartDisplay={setCartDisplay}></Products>
-            <Cart cart={cart} setCartDisplay={setCartDisplay} cartDisplay={cartDisplay}></Cart>
+            <Cart setCart={setCart} cart={cart} setCartDisplay={setCartDisplay} cartDisplay={cartDisplay}></Cart>
         </div>
     );
 };

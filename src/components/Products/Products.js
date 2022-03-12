@@ -30,7 +30,7 @@ const Products = ({ setCartDisplay, setCart, cart }) => {
                             <img src={product?.img} className="card-img-top img-fluid" alt="..." />
                             <div className="card-body ">
                                 <h5 className="card-title fs-6" >{product?.name.slice(0, 50)}...</h5>
-                                <p className="card-text">${product?.price}</p>
+                                <p className="card-text fw-bolder">${product?.price}</p>
                                 <button className="btn btn-primary" onClick={() => handleAddToCart(product)}>Add to Cart <FaShoppingCart /></button>
                             </div>
                         </div>

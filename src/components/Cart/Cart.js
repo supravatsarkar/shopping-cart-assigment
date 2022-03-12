@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { FaWindowClose } from 'react-icons/fa';
+import { AiFillDelete } from "react-icons/ai";
 
 
-const Cart = ({ cartDisplay, setCartDisplay, cart }) => {
+const Cart = ({ cartDisplay, setCartDisplay, cart, setCart }) => {
 
     const closeButton = () => {
         setCartDisplay({
@@ -10,6 +11,16 @@ const Cart = ({ cartDisplay, setCartDisplay, cart }) => {
         });
     }
     console.log(cart);
+
+    const handleRemoveButton = (ProductId) => {
+        const restProducts = cart?.filter(product => product.key !== ProductId);
+        setCart([...restProducts]);
+    }
+
+    let total = 0;
+    cart.forEach(product => {
+        total += product.price;
+    })
     return (
         <div id="cart" className='shadow-lg border border-2 rounded bg-white p-3' style={cartDisplay}>
             {/* close botton  */}
@@ -21,15 +32,17 @@ const Cart = ({ cartDisplay, setCartDisplay, cart }) => {
                     cart?.map((cartProduct, index) => <div key={index}>
                         <div class="card mb-3" >
                             <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src={cartProduct?.img} class="img-fluid rounded-start" alt="..." />
+                                <div class="col-md-2">
+                                    <img src={cartProduct?.img} class="img-fluid rounded-circle bg-secondary" alt="..." />
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title"></h5>
-                                        <p class="card-text">{cartProduct?.name?.slice(0, 20)}..</p>
-                                        <p className="card-text">${cartProduct?.price}</p>
-                                    </div>
+                                <div class="col-md-6">
+                                    <p class="card-text">{cartProduct?.name?.slice(0, 20)}..</p>
+                                </div>
+                                <div className='col-md-3'>
+                                    <p className='text-primary '>${cartProduct?.price}</p>
+                                </div>
+                                <div className='col-md-1'>
+                                    <AiFillDelete className='deleteFromCartIcon text-danger fs-5' onClick={() => handleRemoveButton(cartProduct.key)} />
                                 </div>
                             </div>
                         </div>
@@ -38,7 +51,7 @@ const Cart = ({ cartDisplay, setCartDisplay, cart }) => {
                 }
             </div>
             <hr />
-            <p>Total: </p>
+            <p className='fs-6 fw-bolder'>Total: {total.toFixed(2)}</p>
         </div>
     );
 };
