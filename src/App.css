@@ -31,6 +31,20 @@
    padding: 10px;
   /* background-color: #2196F3; */
 }
+.product{
+  overflow: hidden;
+  
+  /* transition-timing-function: ease-in; */
+}
+.product img{
+  transition: all 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.product:hover img{
+  /* transition-timing-function: ease-in-out; */
+  transform: scale(1.1);
+  /* transition-duration: 0.8s; */
+}
 
 #cart{
   /* border: 1px solid blue; */

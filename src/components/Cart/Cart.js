@@ -26,17 +26,17 @@ const Cart = ({ cartDisplay, setCartDisplay, cart, setCart }) => {
             {/* close botton  */}
             <FaWindowClose onClick={closeButton} id="cartCloseBtn" className='fs-2 m-0 p-0' />
 
-            <h2 className='text-center'>Your Cart: {cart.length}</h2>
+            <h2 className='text-center fs-5'>Your Cart: {cart.length}</h2>
             <div>
                 {
                     cart?.map((cartProduct, index) => <div key={index}>
-                        <div class="card mb-3" >
+                        <div class=" shadow mb-2" >
                             <div class="row g-0">
                                 <div class="col-md-2">
-                                    <img src={cartProduct?.img} class="img-fluid rounded-circle bg-secondary" alt="..." />
+                                    <img src={cartProduct?.img} class="img-fluid rounded-circle bg-secondary border border-primary" alt="..." />
                                 </div>
                                 <div class="col-md-6">
-                                    <p class="card-text">{cartProduct?.name?.slice(0, 20)}..</p>
+                                    <p class="text-muted" style={{ fontSize: '14px' }}>{cartProduct?.name?.slice(0, 20)}..</p>
                                 </div>
                                 <div className='col-md-3'>
                                     <p className='text-primary '>${cartProduct?.price}</p>

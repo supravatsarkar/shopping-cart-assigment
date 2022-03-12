@@ -22,11 +22,11 @@ const Products = ({ setCartDisplay, setCart, cart }) => {
     }
     return (
         <div id='products'>
-            <div class="row row-cols-1 row-cols-2 row-cols-md-5 g-4">
+            <div class="row row-cols-1 row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
 
                 {
                     products?.map((product, index) => <div key={index} class="col">
-                        <div className="card h-100 shadow-lg" data-bs-toggle="tooltip" data-bs-placement="top" title={product?.name}>
+                        <div className="product card h-100 shadow-lg" data-bs-toggle="tooltip" data-bs-placement="top" title={product?.name}>
                             <img src={product?.img} className="card-img-top img-fluid" alt="..." />
                             <div className="card-body ">
                                 <h5 className="card-title fs-6" >{product?.name.slice(0, 50)}...</h5>
