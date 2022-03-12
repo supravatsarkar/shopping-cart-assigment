@@ -1,14 +1,17 @@
+import { useState } from "react";
 import Cart from "../Cart/Cart";
 import Products from "../Products/Products";
 
 
-const Shop = () => {
+const Shop = ({ cartDisplay, setCartDisplay }) => {
+
 
     return (
         <div id="shop">
             {/* <h1>This is Shop</h1> */}
+
             <Products></Products>
-            <Cart></Cart>
+            <Cart setCartDisplay={setCartDisplay} cartDisplay={cartDisplay}></Cart>
         </div>
     );
 };

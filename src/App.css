@@ -34,8 +34,17 @@
   top: 60px;
   right: 10px;
   width: 350px;
-  min-height: 100vh;
+  min-height: 70vh;
   /* background-color: greenyellow; */
   z-index: 11;
+}
+#cartIcon{
+  cursor: pointer;
+}
+#cartCloseBtn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
 }
 
