@@ -32,18 +32,18 @@ const Cart = ({ cartDisplay, setCartDisplay, cart, setCart }) => {
                     cart?.map((cartProduct, index) => <div key={index}>
                         <div class=" shadow mb-2 p-1 rounded" >
                             <div class="row g-0">
-                                <div class="col-md-2">
+                                <div class="col-2">
                                     <img src={cartProduct?.img} class="img-fluid  " alt="..." />
                                 </div>
-                                <div class="col-md-6 " style={{ fontSize: '12px' }}>
+                                <div class="col-6 " style={{ fontSize: '12px' }}>
                                     <p class="text-muted m-0 " >{cartProduct?.name?.slice(0, 20)}..</p>
                                     Quantity: {cartProduct.quantity}
                                 </div>
-                                <div className='col-md-3' style={{ fontSize: '14px' }}>
+                                <div className='col-3' style={{ fontSize: '14px' }}>
                                     <p className='text-primary '>${cartProduct?.price}</p>
 
                                 </div>
-                                <div className='col-md-1'>
+                                <div className='col-1'>
                                     <AiFillDelete className='deleteFromCartIcon text-danger fs-5' onClick={() => handleRemoveButton(cartProduct.key)} />
                                 </div>
                             </div>
