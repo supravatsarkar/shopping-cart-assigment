@@ -15,7 +15,15 @@ const Products = ({ setCartDisplay, setCart, cart }) => {
     }, [])
 
     const handleAddToCart = (product) => {
-        setCart([...cart, product]);
+        const findItem = cart.find(prod => prod.key === product.key);
+        if (!findItem) {
+            const newProduct = { ...product, quantity: 1 };
+            setCart([...cart, newProduct]);
+        } else {
+            findItem.quantity++;
+
+        }
+
         setCartDisplay({
             top: '50px',
         });
