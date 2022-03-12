@@ -54,7 +54,14 @@ const Cart = ({ cartDisplay, setCartDisplay, cart, setCart }) => {
             </div>
             <hr />
             <p className='fs-6 fw-bolder'>Total: {total.toFixed(2)}</p>
-            <div className="btn btn-warning">Place Order</div>
+            {
+                cart.length !== 0 && <div className="btn btn-warning" onClick={() => {
+                    if (cart.length) {
+                        alert('WOW! Your order successfully placed');
+                        setCart([])
+                    }
+                }}>Place Order</div>
+            }
         </div>
     );
 };

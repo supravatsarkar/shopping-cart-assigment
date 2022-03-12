@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { FaShoppingCart } from 'react-icons/fa';
+import { BsFillCartPlusFill } from "react-icons/bs";
+import { FcRating } from "react-icons/fc";
 
 const Products = ({ setCartDisplay, setCart, cart }) => {
     const [products, setProducts] = useState([]);
@@ -34,12 +35,22 @@ const Products = ({ setCartDisplay, setCart, cart }) => {
 
                 {
                     products?.map((product, index) => <div key={index} class="col">
-                        <div className="product card h-100 shadow-lg" data-bs-toggle="tooltip" data-bs-placement="top" title={product?.name}>
+                        <div className="product card h-100 shadow" data-bs-toggle="tooltip" data-bs-placement="top" title={product?.name}>
                             <img src={product?.img} className="card-img-top img-fluid" alt="..." />
-                            <div className="card-body ">
+                            <div className="card-body p-2">
                                 <h5 className="card-title fs-6" >{product?.name.slice(0, 50)}...</h5>
-                                <p className="card-text fw-bolder">${product?.price}</p>
-                                <button className="btn btn-primary" onClick={() => handleAddToCart(product)}>Add to Cart <FaShoppingCart /></button>
+                                <div className='d-flex justify-content-between align-items-center'>
+                                    <small className='text-muted'>{product.category}</small>
+                                    <small className='d-flex justify-content-between align-items-center'>
+                                        <FcRating />
+                                        {product.star}
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+
+                                <p className="card-text fw-bolder m-0">${product?.price}</p>
+                                <BsFillCartPlusFill className='fs-4 deleteFromCartIcon' onClick={() => handleAddToCart(product)} />
                             </div>
                         </div>
                     </div>)
